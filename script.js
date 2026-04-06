@@ -32,6 +32,12 @@ function renderBoard() {
     const cell = cellEls[index];
     cell.textContent = value ?? "";
     cell.disabled = state.gameOver || value !== null;
+
+    if (state.winningLine && state.winningLine.includes(index)) {
+      cell.classList.add("is-winning");
+    } else {
+      cell.classList.remove("is-winning");
+    }
   });
 }
 
