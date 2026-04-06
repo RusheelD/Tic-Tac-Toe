@@ -60,6 +60,8 @@ vm.runInContext(scriptCode, context);
 
 const { checkWin, checkDraw } = context;
 
+const normalize = (value) => (value ? JSON.parse(JSON.stringify(value)) : value);
+
 assert.strictEqual(typeof checkWin, 'function', 'checkWin should be a function');
 assert.strictEqual(typeof checkDraw, 'function', 'checkDraw should be a function');
 
@@ -68,14 +70,14 @@ assert.strictEqual(checkWin(emptyBoard), null, 'empty board has no winner');
 assert.strictEqual(checkDraw(emptyBoard), false, 'empty board is not a draw');
 
 const rowWinBoard = ['X', 'X', 'X', null, 'O', null, null, 'O', null];
-assert.deepStrictEqual(checkWin(rowWinBoard), { winner: 'X', line: [0, 1, 2] }, 'detects top row win');
+assert.deepStrictEqual(normalize(checkWin(rowWinBoard)), { winner: 'X', line: [0, 1, 2] }, 'detects top row win');
 assert.strictEqual(checkDraw(rowWinBoard), false, 'row win is not a draw');
 
 const colWinBoard = ['O', 'X', null, 'O', 'X', null, 'O', null, 'X'];
-assert.deepStrictEqual(checkWin(colWinBoard), { winner: 'O', line: [0, 3, 6] }, 'detects left column win');
+assert.deepStrictEqual(normalize(checkWin(colWinBoard)), { winner: 'O', line: [0, 3, 6] }, 'detects left column win');
 
 const diagWinBoard = ['X', 'O', null, null, 'X', 'O', null, null, 'X'];
-assert.deepStrictEqual(checkWin(diagWinBoard), { winner: 'X', line: [0, 4, 8] }, 'detects diagonal win');
+assert.deepStrictEqual(normalize(checkWin(diagWinBoard)), { winner: 'X', line: [0, 4, 8] }, 'detects diagonal win');
 
 const drawBoard = ['X', 'O', 'X', 'X', 'O', 'O', 'O', 'X', 'X'];
 assert.strictEqual(checkWin(drawBoard), null, 'draw board has no winner');
