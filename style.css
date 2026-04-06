@@ -8,6 +8,8 @@
   --color-accent: #2b6ff3;
   --color-accent-strong: #225ad1;
   --color-win: #2e9b64;
+  --color-cell: #fdfdff;
+  --color-button-text: #ffffff;
   --shadow-soft: 0 14px 36px rgba(23, 30, 44, 0.12);
   --radius-lg: 18px;
   --radius-md: 12px;
@@ -33,6 +35,8 @@
     --color-accent: #6aa2ff;
     --color-accent-strong: #4b82ff;
     --color-win: #5ad18c;
+    --color-cell: #1f2532;
+    --color-button-text: #0d1220;
     --shadow-soft: 0 18px 36px rgba(0, 0, 0, 0.4);
   }
 }
@@ -92,7 +96,7 @@ h1 {
   min-height: var(--cell-size);
   border-radius: var(--radius-md);
   border: 2px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--color-cell);
   display: grid;
   place-items: center;
   font-size: clamp(2.4rem, 8vw, 4rem);
@@ -128,7 +132,7 @@ h1 {
   min-height: 44px;
   min-width: 160px;
   background: var(--color-accent);
-  color: #ffffff;
+  color: var(--color-button-text);
   cursor: pointer;
   transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
   box-shadow: 0 8px 18px rgba(43, 111, 243, 0.25);
