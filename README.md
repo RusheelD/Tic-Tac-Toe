@@ -1,8 +1,24 @@
 # Tic Tac Toe
 
+A simple local two-player Tic Tac Toe game built with HTML, CSS, and JavaScript.
+
+## Features
+
+- Local two-player turns with win/draw detection.
+- Status messaging for turns and outcomes.
+- Highlighted winning line and a reset button.
+
 ## Run locally
 
 Open `index.html` in your browser.
+
+## Tests
+
+Run the logic checks with Node:
+
+```sh
+node tests/logic.test.js
+```
 
 ## Deploy to GitHub Pages
 

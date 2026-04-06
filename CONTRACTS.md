@@ -6,6 +6,7 @@
 - `#board` : board container with 9 child elements.
 - `.cell` : each board cell element.
 - `data-index` : integer 0-8 attribute on each `.cell`, mapping to the board array index.
+- `.cell.is-winning` : applied to cells that are part of the winning line (for styling).
 - `#reset` : button to reset the game.
 
 ## Game State Model (script.js)

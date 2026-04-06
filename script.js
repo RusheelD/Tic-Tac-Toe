@@ -115,6 +115,7 @@ resetBtn.addEventListener("click", () => {
   renderStatus();
 });
 
+// Set to true to run quick console checks for win/draw logic.
 const RUN_LOGIC_TESTS = false;
 if (RUN_LOGIC_TESTS) {
   console.log("Win check", checkWin(["X", "X", "X", null, null, null, null, null, null]));
